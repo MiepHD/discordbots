@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Place
+comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Place.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
+comment1.params=message\ event
+comment1.target=java.lang.String\ place(java.lang.String,\ net.dv8tion.jda.api.events.message.MessageReceivedEvent)
+numComments=2
