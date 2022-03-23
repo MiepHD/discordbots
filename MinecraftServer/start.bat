@@ -1,0 +1,1 @@
+start "Scheduler: Jemand auf dem Server?" /min "startbot.bat"
