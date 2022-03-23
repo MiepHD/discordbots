@@ -390,4 +390,4 @@ def timestamped_print(*args, **kwargs):
 print = timestamped_print
 #Starte Client
 client = MyClient()
-client.run("OTQ3NzYxOTgzNjIzNjY3NzEy.Yhx-IQ.keibziV-IfwW_LZstWe_x2GeEyo")
+client.run("token")
