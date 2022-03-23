@@ -57,4 +57,4 @@ def timestamped_print(*args, **kwargs):
     old_print(datetime.now(), *args, **kwargs)
 print = timestamped_print
 client = MyClient()
-client.run("OTI4OTYzODEyNTg4MTM4NTE2.Ydga-A.A44Vq8uV5ww4EDCa-peSXSbrEMA")
+client.run("token")
