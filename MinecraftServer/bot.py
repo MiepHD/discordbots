@@ -18,13 +18,13 @@ class MyClient(discord.Client):
         if message.author == client.user:
             print(str(message.content))
             return
-        if message.author.id == 689405408661864449:
+        if message.author.id == 000000000000000000:
             server = 1
-        if message.author.id == 636229819620655134:
+        if message.author.id == 000000000000000000:
             server = 1
-        if message.author.id == 689531183939190902:
+        if message.author.id == 000000000000000000:
             server = 1
-        if message.author.id == 366207748679139328:
+        if message.author.id == 000000000000000000:
             server = 1
         if server == 1:
             #Help
@@ -83,7 +83,7 @@ class MyClient(discord.Client):
                         command = command[1]
                         await message.channel.send('RCON startet')
                         rcon = RCONClient('localhost', port=25575)
-                        success = rcon.login('xAQzPnNrHE3AKB8WbznR')
+                        success = rcon.login('XXXXXXXXXXXXXXXXXXXX')
                         if success == True:
                             await message.channel.send('RCON verbunden')
                         else:
@@ -134,7 +134,7 @@ class MyClient(discord.Client):
                 print(standart)
                 msg = str(message.content).split("msg ")
                 msg = msg[1]
-                channel = client.get_channel(874677174882431067)
+                channel = client.get_channel(000000000000000000)
                 await channel.send("Nachricht von " + str(message.author) + "\n" + msg)
             elif message.content == "?exit":
                 print(standart)
@@ -154,9 +154,9 @@ class MyClient(discord.Client):
                 print(standart)
                 nachricht = str(message.content).split("!")
                 nachricht = nachricht[1]
-                channel = client.get_channel(697105486180515870)
+                channel = client.get_channel(000000000000000000)
                 await channel.send(nachricht)
-                channel = client.get_channel(874677174882431067)
+                channel = client.get_channel(000000000000000000)
                 await channel.send(nachricht)
             else:
                 if message.content != "?":
