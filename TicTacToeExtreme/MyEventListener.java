@@ -20,7 +20,7 @@ public class MyEventListener extends ListenerAdapter {
         if (Start.debug == true) System.out.println("Nachricht ausgewertet");
         String antwort = main.onMessage(content, event);
         if (antwort != null) {
-            event.getChannel().sendMessage(antwort).queue();
+            Versenden.sendMessage(event, antwort);
         } else {
             System.out.println("Leere Antwort zurückgekommen. Ist ein Fehler aufgetreten?");
         }

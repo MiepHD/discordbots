@@ -105,13 +105,13 @@ public class Board
                     int p1_punkte_gesamt = 0;
                     int p2_punkte_gesamt = 0;
                     spielfeld_text = zeichneBoard();
-                    event.getChannel().sendMessage(spielfeld_text).queue();
+                    Versenden.sendMessage(event, spielfeld_text);
                     if (symbol == "p1") {
-                        event.getChannel().sendMessage("<@" + Spielstatus.player1.getId() + "> hat gewonnen").queue();
+                        Versenden.sendMessage(event, "<@" + Spielstatus.player1 + "> hat gewonnen");
                         p1_punkte = 6;
                         p2_punkte = 0;
                     } else {
-                        event.getChannel().sendMessage("<@" + Spielstatus.player1.getId() + "> hat gewonnen").queue();
+                        Versenden.sendMessage(event, "<@" + Spielstatus.player1 + "> hat gewonnen");
                         p2_punkte = 6;
                         p1_punkte = 0;
                     }
@@ -124,43 +124,29 @@ public class Board
                             }
                         }
                         if (!Spielstatus.data.contains(Spielstatus.player1)) {
-                            Spielstatus.data.add(Integer.parseInt(Spielstatus.player1.getId()));
+                            Spielstatus.data.add(Integer.parseInt(Spielstatus.player1));
                             Spielstatus.data.add(0);
                         }
                         if (!Spielstatus.data.contains(Spielstatus.player2)) {
-                            Spielstatus.data.add(Integer.parseInt(Spielstatus.player1.getId()));
+                            Spielstatus.data.add(Integer.parseInt(Spielstatus.player1));
                             Spielstatus.data.add(0);
                         }
                         for (int i = 0; i <= Spielstatus.data.size(); i++) {
-                            if (Integer.parseInt(Spielstatus.player1.getId()) == Spielstatus.data.get(i)) {
+                            if (Integer.parseInt(Spielstatus.player1) == Spielstatus.data.get(i)) {
                                 Spielstatus.data.set(i + 1, Spielstatus.data.get(i + 1) + p1_punkte);
                                 p1_punkte_gesamt = Spielstatus.data.get(i + 1);
                             }
-                            if (Integer.parseInt(Spielstatus.player2.getId()) == Spielstatus.data.get(i)) {
+                            if (Integer.parseInt(Spielstatus.player2) == Spielstatus.data.get(i)) {
                                 Spielstatus.data.set(i + 1, Spielstatus.data.get(i + 1) + p2_punkte);
                                 p2_punkte_gesamt = Spielstatus.data.get(i + 1);
                             }
                         }
-                        event.getChannel().sendMessage("Player eins hat " + p1_punkte + " Punkte erspielt und hat damit jetzt insgesamt " + p1_punkte_gesamt).queue();
-                        event.getChannel().sendMessage("Player zwei hat " + p2_punkte + " Punkte erspielt und hat damit jetzt insgesamt " + p2_punkte_gesamt).queue();
+                        Versenden.sendMessage(event, "Player eins hat " + p1_punkte + " Punkte erspielt und hat damit jetzt insgesamt " + p1_punkte_gesamt);
+                        Versenden.sendMessage(event, "Player zwei hat " + p2_punkte + " Punkte erspielt und hat damit jetzt insgesamt " + p2_punkte_gesamt);
                     }
                 }
             }
             int besetzt = 0;
-            if (!spielgewonnen) {
-                antwort = zeichneBoard();
-                for (String element : bigboard) {
-                    if (element != "p0") {
-                        besetzt++;
-                    }
-                }
-                if (besetzt == 9) {
-                    event.getChannel().sendMessage("Unentschieden!").queue();
-                    antwort = zeichneBoard();
-                    return antwort;
-                }
-            }
-            besetzt = 0;
             if (!kleinfeldgewonnen) {
                 for (int x = 0; x <= 2; x++) {
                     for (int y = 0; y <= 2; y++) {
@@ -172,6 +158,22 @@ public class Board
                 }
                 if (besetzt == 9) {
                     bigboard.set(new_target, "/");
+                }
+            }
+            besetzt = 0;
+            if (!spielgewonnen) {
+                antwort = zeichneBoard();
+                for (String element : bigboard) {
+                    if (element != "p0") {
+                        besetzt++;
+                    }
+                }
+                if (besetzt == 9) {
+                    Versenden.sendMessage(event, antwort);
+                    return "Unentschieden!";
+                } else {
+                    Versenden.sendTemporaryMessage(event, antwort);
+                    return null;
                 }
             }
         } else {
@@ -230,10 +232,12 @@ public class Board
         if (Spielstatus.turn == "p1") {
             board.set(number, kreis);
             Spielstatus.turn = "p2";
+            System.out.println("@<" + Spielstatus.player2 + "> ist nun an der Reihe");
             return kreis;
         } else {
             board.set(number, kreuz);
             Spielstatus.turn = "p1";
+            System.out.println("@<" + Spielstatus.player1 + " ist nun an der Reihe");
             return kreuz;
         }
     }

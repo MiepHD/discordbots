@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 public class Spielstatus {
     static String turn;
-    static User player1;
-    static User player2;
+    static String player1;
+    static String player2;
     static boolean begonnen;
     static Board board;
     static ArrayList<Integer> data;

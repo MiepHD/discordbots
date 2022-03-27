@@ -8,21 +8,19 @@ public class TicTacToe
     }
     public String ticTacToe(String message, MessageReceivedEvent event) {
         if (Spielstatus.player1 == null) {
-            Spielstatus.player1 = event.getAuthor();
-            antwort = "Player eins ist <@" + event.getAuthor().getId() + ">";
-            return antwort;
+            Spielstatus.player1 = event.getAuthor().getId();
+            return "Player eins ist <@" + event.getAuthor().getId() + ">";
         } else if (Spielstatus.player2 == null) {
-            Spielstatus.player2 = event.getAuthor();
+            Spielstatus.player2 = event.getAuthor().getId();
             antwort = "Player zwei ist <@" + event.getAuthor().getId() + ">";
-            event.getChannel().sendMessage(antwort).queue();
+            Versenden.sendMessage(event, antwort);
             Spielstatus.begonnen = true;
             Spielstatus.board.generiereBoard();
             Spielstatus.turn = "p1";
             antwort = Spielstatus.board.zeichneBoard();
             return antwort;
         } else {
-            antwort = "Es sind bereits alle Plätze besetzt";
-            return antwort;
+            return "Es sind bereits alle Plätze besetzt";
         }
     }
 }

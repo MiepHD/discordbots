@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Versenden
+comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Versenden.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
+comment1.params=event\ antwort
+comment1.target=void\ sendTemporaryMessage(net.dv8tion.jda.api.events.message.MessageReceivedEvent,\ java.lang.String)
+comment2.params=event\ antwort
+comment2.target=void\ sendMessage(net.dv8tion.jda.api.events.message.MessageReceivedEvent,\ java.lang.String)
+numComments=3

@@ -16,10 +16,9 @@ public class Place
         int ziffer;
         int number;
         antwort = null;
-        if (!((Spielstatus.turn == "p1" && event.getAuthor() == Spielstatus.player1)  || (Spielstatus.turn == "p2" && event.getAuthor() == Spielstatus.player2))) {
-            antwort = "Du bist nicht an der Reihe";    
-            return antwort;
-        }
+        if (!((Spielstatus.turn.equals("p1") && event.getAuthor().getId().equals(Spielstatus.player1))  || (Spielstatus.turn.equals("p2") && event.getAuthor().getId().equals(Spielstatus.player2)))) { 
+            return "Du bist nicht an der Reihe";
+        } 
         eingabe = message.split(" ", 2)[1];
         buchstabe = eingabe.charAt(0);
         buchstabenziffer = buchstabe - 65;
