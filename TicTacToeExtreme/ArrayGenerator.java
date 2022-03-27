@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Beschreiben Sie hier die Klasse Feldgruppen.
@@ -8,20 +9,36 @@ import java.util.ArrayList;
  */
 public class ArrayGenerator {
     public ArrayList map_feldgruppen() {
-        ArrayList<Integer> infeldgruppen;
-        ArrayList<ArrayList> feldgruppen;
-        infeldgruppen = new ArrayList<Integer>();
-        feldgruppen = new ArrayList<ArrayList>();
-        infeldgruppen.add(0);
-        infeldgruppen.add(1);
-        infeldgruppen.add(2);
-        infeldgruppen.add(9);
-        infeldgruppen.add(10);
-        infeldgruppen.add(11);
-        infeldgruppen.add(18);
-        infeldgruppen.add(19);
-        infeldgruppen.add(20);
-        feldgruppen.add(infeldgruppen);
+        ArrayList<Integer> felgrup1 = new ArrayList<Integer>(
+            List.of(0, 1, 2, 9, 10, 11, 18, 19, 20)
+        );
+        ArrayList<Integer> felgrup2 = new ArrayList<Integer>(
+            List.of(3, 4, 5, 12, 13, 14, 21, 22, 23)
+        );
+        ArrayList<Integer> felgrup3 = new ArrayList<Integer>(
+            List.of(6, 7, 8, 15, 16, 17, 24, 25, 26)
+        );
+        ArrayList<Integer> felgrup4 = new ArrayList<Integer>(
+            List.of(27, 28, 29, 36, 37, 38, 45, 46, 47)
+        );
+        ArrayList<Integer> felgrup5 = new ArrayList<Integer>(
+            List.of(30, 31, 32, 39, 40, 41, 48, 49, 50)
+        );
+        ArrayList<Integer> felgrup6 = new ArrayList<Integer>(
+            List.of(33, 34, 35, 42, 43, 44, 51, 52, 53)
+        );
+        ArrayList<Integer> felgrup7 = new ArrayList<Integer>(
+            List.of(54, 55, 56, 63, 64, 65, 72, 73, 74)
+        );
+        ArrayList<Integer> felgrup8 = new ArrayList<Integer>(
+            List.of(57, 58, 59, 66, 67, 68, 75, 76, 77)
+        );
+        ArrayList<Integer> felgrup9 = new ArrayList<Integer>(
+            List.of(60, 61, 62, 69, 70, 71, 78, 79, 80)
+        );
+        ArrayList<ArrayList<Integer>> feldgruppen = new ArrayList<ArrayList<Integer>>(
+            List.of(felgrup1, felgrup2, felgrup3, felgrup4, felgrup5, felgrup6, felgrup7, felgrup8, felgrup9)
+        );
         return feldgruppen;
     }
     public ArrayList bigboard() {
@@ -31,125 +48,68 @@ public class ArrayGenerator {
         }
         return bigboard;
     }
-    public ArrayList zahlen() {
-        ArrayList<String> zahlen = new ArrayList<String>();
-        zahlen.add("");
-        zahlen.add("");
-        zahlen.add(":two:");
-        zahlen.add(":three:");
-        zahlen.add(":four:");
-        zahlen.add(":five:");
-        zahlen.add(":six:");
-        zahlen.add(":seven:");
-        zahlen.add(":eight:");
-        zahlen.add(":nine:");
-        zahlen.add("");
-        return zahlen;
+    public ArrayList winningConditions() {
+        ArrayList<Integer> wincon1 = new ArrayList<Integer>(
+            List.of(0, 1, 2)
+        );
+        ArrayList<Integer> wincon2 = new ArrayList<Integer>(
+            List.of(3, 4, 5)
+        );
+        ArrayList<Integer> wincon3 = new ArrayList<Integer>(
+            List.of(6, 7, 8)
+        );
+        ArrayList<Integer> wincon4 = new ArrayList<Integer>(
+            List.of(0, 3, 6)
+        );
+        ArrayList<Integer> wincon5 = new ArrayList<Integer>(
+            List.of(1, 4, 7)
+        );
+        ArrayList<Integer> wincon6 = new ArrayList<Integer>(
+            List.of(2, 5, 8)
+        );
+        ArrayList<Integer> wincon7 = new ArrayList<Integer>(
+            List.of(0, 4, 8)
+        );
+        ArrayList<Integer> wincon8 = new ArrayList<Integer>(
+            List.of(2, 4, 6)
+        );
+        ArrayList<ArrayList<Integer>> winningconditions = new ArrayList<ArrayList<Integer>>(
+            List.of(wincon1, wincon2, wincon3, wincon4, wincon5, wincon6, wincon7, wincon8)
+        );
+        return winningconditions;
     }
     public ArrayList feldgruppen() {
-        ArrayList<Integer> infeldgruppen;
         ArrayList<ArrayList> feldgruppen;
-        infeldgruppen = new ArrayList<Integer>();
-        feldgruppen = new ArrayList<ArrayList>();
-        infeldgruppen.add(0);
-        infeldgruppen.add(3);
-        infeldgruppen.add(6);
-        infeldgruppen.add(27);
-        infeldgruppen.add(30);
-        infeldgruppen.add(33);
-        infeldgruppen.add(54);
-        infeldgruppen.add(57);
-        infeldgruppen.add(60);
-        feldgruppen.add(infeldgruppen);
-        infeldgruppen.clear();
-        infeldgruppen.add(1);
-        infeldgruppen.add(4);
-        infeldgruppen.add(7);
-        infeldgruppen.add(28);
-        infeldgruppen.add(31);
-        infeldgruppen.add(34);
-        infeldgruppen.add(55);
-        infeldgruppen.add(58);
-        infeldgruppen.add(61);
-        feldgruppen.add(infeldgruppen);
-        infeldgruppen.clear();
-        infeldgruppen.add(2);
-        infeldgruppen.add(5);
-        infeldgruppen.add(8);
-        infeldgruppen.add(29);
-        infeldgruppen.add(32);
-        infeldgruppen.add(35);
-        infeldgruppen.add(56);
-        infeldgruppen.add(59);
-        infeldgruppen.add(62);
-        feldgruppen.add(infeldgruppen);
-        infeldgruppen.clear();
-        infeldgruppen.add(9);
-        infeldgruppen.add(12);
-        infeldgruppen.add(15);
-        infeldgruppen.add(36);
-        infeldgruppen.add(39);
-        infeldgruppen.add(42);
-        infeldgruppen.add(63);
-        infeldgruppen.add(66);
-        infeldgruppen.add(69);
-        feldgruppen.add(infeldgruppen);
-        infeldgruppen.clear();
-        infeldgruppen.add(10);
-        infeldgruppen.add(13);
-        infeldgruppen.add(16);
-        infeldgruppen.add(37);
-        infeldgruppen.add(40);
-        infeldgruppen.add(43);
-        infeldgruppen.add(64);
-        infeldgruppen.add(67);
-        infeldgruppen.add(70);
-        feldgruppen.add(infeldgruppen);
-        infeldgruppen.clear();
-        infeldgruppen.add(11);
-        infeldgruppen.add(14);
-        infeldgruppen.add(17);
-        infeldgruppen.add(38);
-        infeldgruppen.add(41);
-        infeldgruppen.add(44);
-        infeldgruppen.add(65);
-        infeldgruppen.add(68);
-        infeldgruppen.add(71);
-        feldgruppen.add(infeldgruppen);
-        infeldgruppen.clear();
-        infeldgruppen.add(18);
-        infeldgruppen.add(21);
-        infeldgruppen.add(24);
-        infeldgruppen.add(45);
-        infeldgruppen.add(48);
-        infeldgruppen.add(51);
-        infeldgruppen.add(72);
-        infeldgruppen.add(75);
-        infeldgruppen.add(78);
-        feldgruppen.add(infeldgruppen);
-        infeldgruppen.clear();
-        infeldgruppen.add(19);
-        infeldgruppen.add(22);
-        infeldgruppen.add(25);
-        infeldgruppen.add(46);
-        infeldgruppen.add(49);
-        infeldgruppen.add(52);
-        infeldgruppen.add(73);
-        infeldgruppen.add(76);
-        infeldgruppen.add(79);
-        feldgruppen.add(infeldgruppen);
-        infeldgruppen.clear();
-        infeldgruppen.add(20);
-        infeldgruppen.add(23);
-        infeldgruppen.add(26);
-        infeldgruppen.add(47);
-        infeldgruppen.add(50);
-        infeldgruppen.add(53);
-        infeldgruppen.add(74);
-        infeldgruppen.add(77);
-        infeldgruppen.add(80);
-        feldgruppen.add(infeldgruppen);
-        infeldgruppen.clear();
+        ArrayList<Integer> felgrup1 = new ArrayList<Integer>(
+            List.of(0, 3, 6, 27, 30, 33, 54, 57, 60)
+        );
+        ArrayList<Integer> felgrup2 = new ArrayList<Integer>(
+            List.of(1, 4, 7, 28, 31, 34, 55, 58, 61)
+        );
+        ArrayList<Integer> felgrup3 = new ArrayList<Integer>(
+            List.of(2, 5, 8, 29, 32, 35, 56, 59, 62)
+        );
+        ArrayList<Integer> felgrup4 = new ArrayList<Integer>(
+            List.of(9, 12, 15, 36, 39, 42, 63, 66, 69)
+        );
+        ArrayList<Integer> felgrup5 = new ArrayList<Integer>(
+            List.of(10, 13, 16, 37, 40, 43, 64, 67, 70)
+        );
+        ArrayList<Integer> felgrup6 = new ArrayList<Integer>(
+            List.of(11, 14, 17, 38, 41, 44, 65, 68, 71)
+        );
+        ArrayList<Integer> felgrup7 = new ArrayList<Integer>(
+            List.of(18, 21, 24, 45, 48, 51, 72, 75, 78)
+        );
+        ArrayList<Integer> felgrup8 = new ArrayList<Integer>(
+            List.of(19, 22, 25, 46, 49, 52, 73, 76, 79)
+        );
+        ArrayList<Integer> felgrup9 = new ArrayList<Integer>(
+            List.of(20, 23, 26, 47, 50, 53, 74, 77, 80)
+        );
+        feldgruppen = new ArrayList<ArrayList>(
+            List.of(felgrup1, felgrup2, felgrup3, felgrup4, felgrup5, felgrup6, felgrup7, felgrup8, felgrup9)
+        );
         System.out.println("Feldgruppen: " + feldgruppen);
         return feldgruppen;
     }

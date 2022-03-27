@@ -11,8 +11,10 @@ public class Main
     public String onMessage(String message, MessageReceivedEvent event) {
         String antwort = null;
         if (message.startsWith("*exit")) {
+            System.out.println("Beende Bot");
             System.exit(0);
         }
+        System.out.println(message);
         if (message.startsWith("*tictactoe") || message.startsWith("*ttt")) {
             TicTacToe tictactoe = new TicTacToe();
             antwort = tictactoe.ticTacToe(message, event);

@@ -23,9 +23,12 @@ public class Place
         eingabe = message.split(" ", 2)[1];
         buchstabe = eingabe.charAt(0);
         buchstabenziffer = buchstabe - 65;
-        ziffer = eingabe.charAt(1);
+        System.out.println("Zahl für Buchstabe " + buchstabe + ": " + buchstabenziffer);
+        ziffer = eingabe.charAt(1) - 49;
+        System.out.println("Zahl ist: " + ziffer);
         number = ziffer * 9 + buchstabenziffer;
-        antwort = Spielstatus.board.place(number);
+        System.out.println("Extrahierte Zahl: " + number);
+        antwort = Spielstatus.board.place(number, event);
         return antwort;
     }
 }

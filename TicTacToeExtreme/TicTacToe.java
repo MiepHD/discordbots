@@ -9,11 +9,11 @@ public class TicTacToe
     public String ticTacToe(String message, MessageReceivedEvent event) {
         if (Spielstatus.player1 == null) {
             Spielstatus.player1 = event.getAuthor();
-            antwort = "Player eins ist <@" + event.getAuthor() + ">";
+            antwort = "Player eins ist <@" + event.getAuthor().getId() + ">";
             return antwort;
         } else if (Spielstatus.player2 == null) {
             Spielstatus.player2 = event.getAuthor();
-            antwort = "Player zwei ist <@" + event.getAuthor() + ">";
+            antwort = "Player zwei ist <@" + event.getAuthor().getId() + ">";
             event.getChannel().sendMessage(antwort).queue();
             Spielstatus.begonnen = true;
             Spielstatus.board.generiereBoard();

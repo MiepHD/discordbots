@@ -9,14 +9,20 @@ public class MyEventListener extends ListenerAdapter {
     }
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
-        if (event.getAuthor().isBot()) return;
-        
+        if (event.getAuthor().isBot()) {
+            if (Start.debug == true) System.out.println("Nachricht eines Bots");
+            return;
+        }
+        if (Start.debug == true) System.out.println("Werte Nachricht aus");
         Message message = event.getMessage();
         String content = message.getContentRaw();
         MessageChannel channel = event.getChannel();
+        if (Start.debug == true) System.out.println("Nachricht ausgewertet");
         String antwort = main.onMessage(content, event);
         if (antwort != null) {
             event.getChannel().sendMessage(antwort).queue();
+        } else {
+            System.out.println("Leere Antwort zurückgekommen. Ist ein Fehler aufgetreten?");
         }
     }
 }
